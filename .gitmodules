@@ -1,0 +1,3 @@
+[submodule "External/ArgumentParser"]
+	path = External/ArgumentParser
+url=https://github.com/jawngee/ArgumentParser.git
