@@ -20,14 +20,9 @@
 @property (readonly) CLKArguments *arguments;
 
 /**
- *	Initializes a new instance
- *
- *	@param appName Name of the app
- *	@param version Current version number for the app
- *
- *	@return The new instance
+ *	Application setup
  */
--(id)initWithAppName:(NSString *)appName version:(NSString *)version;
+-(void)setup;
 
 /**
  *	The main entry point for the application
@@ -44,6 +39,9 @@
  */
 +(int)runWithAppName:(NSString *)appName version:(NSString *)version;
 
-
+/**
+ *	Prints help
+ */
+-(void)printError:(NSString *)error;
 
 @end

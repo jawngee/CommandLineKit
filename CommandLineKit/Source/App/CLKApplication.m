@@ -15,6 +15,8 @@
     NSString *version;
 }
 
+-(id)initWithAppName:(NSString *)appName version:(NSString *)version;
+
 -(void)printHelp;
 -(void)printVersion;
 
@@ -51,9 +53,16 @@
                          signatureFormat:@"[-v --version]"
                               helpString:@"-v --version -?\tShow version information"];
         }
+        
+        [self setup];
     }
     
     return self;
+}
+
+-(void)setup
+{
+    
 }
 
 -(void)dealloc
@@ -77,6 +86,13 @@
 -(void)printVersion
 {
     printf("%s %s\n",[appName UTF8String],[version UTF8String]);
+}
+
+-(void)printError:(NSString *)error
+{
+    [self printVersion];
+    printf("\n%s\n\n",[error UTF8String]);
+    [_arguments printHelp];
 }
 
 #pragma mark - Main/Run
