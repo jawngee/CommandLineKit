@@ -90,6 +90,7 @@
 
 -(void)printError:(NSString *)error
 {
+    NSLog(@"%@",error);
     [self printVersion];
     printf("\n%s\n\n",[error UTF8String]);
     [_arguments printHelp];
